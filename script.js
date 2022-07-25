@@ -9,6 +9,10 @@ const move = (e) => {
     mem[id]=val
     let result = checkWinner()
     if (result.hasOwnProperty("win")) {
+        for(let i=0;i<9;i++){
+            mem[i]=0;
+            document.getElementById(i).innerHTML = "&nbsp"
+        }
         document.getElementById("msg").innerHTML = result.winner + " has won the match"
     }
     moves++
